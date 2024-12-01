@@ -13,14 +13,14 @@ let occRightLocaId: { [locationId: number]: number } = {};
 for (const input of inputs) {
 	leftList.push(parseInt(input[0]));
 
-	const rightValue = parseInt(input[1]);
-	rightList.push(rightValue);
+	const rightLocId = parseInt(input[1]);
+	rightList.push(rightLocId);
 
 	// Store each apparition of location id for future reference
-	if (!occRightLocaId[rightValue]) {
-		occRightLocaId[rightValue] = 1;
+	if (!occRightLocaId[rightLocId]) {
+		occRightLocaId[rightLocId] = 1;
 	} else {
-		occRightLocaId[rightValue]++;
+		occRightLocaId[rightLocId]++;
 	}
 }
 
