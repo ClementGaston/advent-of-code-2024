@@ -10,3 +10,14 @@ export function readInput(dirPath: string): string[][] {
 	}
 	return formattedLines;
 }
+
+export function getInput(dirPath: string): string[] {
+	const data = fs.readFileSync(`${dirPath}/input.txt`, "utf-8"); // Read the file synchronously
+	const lines = data.split(/\r?\n/); // Split file content into lines (handles Windows and Unix line endings)
+
+	return lines;
+}
+
+export function formatInputToLetterGrid(lines: string[]): string[][] {
+	return lines.map((line: string) => line.split(""));
+}
